@@ -18,9 +18,8 @@ RUN sed -i \
 WORKDIR /opt/tomcat/webapps/
 RUN rm -rf ROOT  docs  examples  host-manager  manager
 
-RUN mkdir /var/airsonic; mkdir /var/music; mkdir /mnt/DATA
+RUN mkdir /var/airsonic; mkdir /mnt/DATA
 COPY airsonic.properties /var/airsonic/airsonic.properties
-ADD music /var/music
 
 
-RUN chown -R root:root /opt/tomcat; chmod -R 770 /opt/tomcat; chmod -R 770 /var/airsonic; chmod -R 770 /var/music; chmod -R 770 /mnt/DATA
+RUN chown -R root:root /opt/tomcat; chmod -R 770 /opt/tomcat; chmod -R 770 /var/airsonic; chmod -R 770 /mnt/DATA
