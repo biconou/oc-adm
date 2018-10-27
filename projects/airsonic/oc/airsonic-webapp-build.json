@@ -15,7 +15,7 @@
       "to": {
         "kind": "ImageStreamTag",
         "name": "airsonic-webapp:latest"
-      }
+      } 
     }
   }
 }
