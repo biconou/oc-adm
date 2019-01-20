@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nextcloud-mariadb-service
+spec:
+  selector:
+    name: mariadb
+  type: NodePort
+  ports:
+    - port: 3306
+      targetPort: 3306
