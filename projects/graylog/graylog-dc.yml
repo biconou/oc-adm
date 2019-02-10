@@ -1,0 +1,42 @@
+apiVersion: v1
+kind: DeploymentConfig
+metadata:
+  labels:
+    app: graylog
+  name: graylog-dc
+spec:
+  replicas: 1
+  selector:
+    app: graylog
+    deploymentconfig: graylog
+  template:
+    metadata:
+      labels:
+        app: graylog
+        deploymentconfig: graylog
+    spec:
+      containers:
+        - image: graylog
+          name: graylog
+          env:
+            - name: GRAYLOG_MONGODB_URI
+              value: mongodb://userJEU:8lSNSdmwuYufDf37@mongo/graylog
+            - name: GRAYLOG_ELASTICSEARCH_HOSTS
+              value: http://elasticsearch.elastic.svc:9200
+          ports:
+            - containerPort: 9000
+              protocol: TCP
+            - containerPort: 12201
+              protocol: TCP
+            - containerPort: 514
+              protocol: TCP
+  triggers:
+    - type: ConfigChange
+    - imageChangeParams:
+        automatic: true
+        containerNames:
+          - graylog
+        from:
+          kind: ImageStreamTag
+          name: 'graylog:3.0-OKD'
+      type: ImageChange
