@@ -34,3 +34,9 @@ drwxrwxrwx   2 1000080000 root     4096 juin  11  2018 performance_schema
 -rwxrwxrwx   1 1000080000 root    24576 janv. 12 11:56 tc.log
 drwxrwxrwx   2 1000080000 root     4096 juin  11  2018 test
 ```
+
+#logs
+
+Envoi des logs nginx vers graylog.
+https://marketplace.graylog.org/addons/572ff823-62cc-468e-af17-300bcfd9932d
+
