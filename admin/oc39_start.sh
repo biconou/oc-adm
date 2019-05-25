@@ -5,7 +5,7 @@
 
 HOST=`hostname | tr '[:upper:]' '[:lower:]'`
 
-oc cluster up  \
+${OC_COMMAND} cluster up  \
 	--host-config-dir='/mnt/DATA/oc/config' \
 	--host-data-dir='/mnt/DATA/oc/data' \
 	--host-pv-dir='/mnt/DATA/oc/pv' \

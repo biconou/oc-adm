@@ -3,4 +3,4 @@
 # exécuter en root
 
 
-oc cluster down
+oc311 cluster down
