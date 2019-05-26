@@ -2,10 +2,10 @@
 
 . ./env.sh
 
-oc new-project ${PROJECT}
+${OC_COMMAND} new-project ${PROJECT}
 
-oc create -f ekstack-template.yml
+${OC_COMMAND} create -f ekstack-template.yml
 
-oc new-app --template=ekstack-template
+${OC_COMMAND} new-app --template=ekstack-template
 
-oc start-build elasticsearch --from-dir=.
+${OC_COMMAND} start-build elasticsearch --from-dir=.

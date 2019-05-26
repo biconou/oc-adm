@@ -2,4 +2,4 @@
 
 . ./env.sh
 
-oc delete project ${PROJECT}
+${OC_COMMAND} delete project ${PROJECT}
